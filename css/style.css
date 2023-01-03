@@ -5,20 +5,49 @@
 }
 
 .game-board{
-    background: linear-gradient(#87ceeb, #e0f6ff);
+    background: linear-gradient(#87CEEB, #E0F6FF);
     width: 100%;
     height: 100vh;
-    border-bottom: 15px solid green;
+    /* border-bottom: 25px solid green; */
     margin: 0 auto;
     position: relative;
     overflow: hidden;
 }
 
-.clouds{
+p{
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family:'Roboto Mono', monospace;
+    margin-top: 2rem;
+}
+
+/* Nuvens */
+
+.clouds-1{
     width: 500px;
     position: absolute;
-    animation: clouds-animation 20s infinite linear;
+    z-index: 10;
+    margin-top: 3rem;
+    animation: clouds-animation 40s infinite linear;
 }
+
+.clouds-2{
+    width: 300px;
+    position: absolute;
+    z-index: 8;
+    margin-top: 8rem;
+    animation: clouds-animation 60s infinite linear;
+}
+
+.clouds-3{
+    width: 200px;
+    position: absolute;
+    z-index: 5;
+    margin-top: 15rem;
+    animation: clouds-animation 70s infinite linear;
+}
+
 
 @keyframes clouds-animation{
     from{
@@ -30,14 +59,17 @@
     }
 }
 
+/* Mario */
+
 .mario{
-    width: 150px;
+    width: 60px;
     position: absolute;
-    bottom: 0px;
+    z-index: 15;
+    bottom: 28px;
 }
 
 .jump{
-    animation: jump 500ms ease-out;
+    animation: jump 1000ms ease-out;
 }
 
 @keyframes jump{
@@ -54,17 +86,126 @@
     }
 }
 
+/* Cenário */
+
 .pipe{
     position: absolute;
-    bottom: 0;
+    bottom: 29px;
     width: 80px;
-    /* left: 120px; */
-    animation: pipe-animation 2s infinite linear;
+    z-index: 0;
+}
+
+.pipe-animation{
+    animation: pipe-animation 4s infinite linear;
 }
 
 @keyframes pipe-animation{
     from{
         right: -80px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+.koopa_shell{
+    position: absolute;
+    bottom: 29px;
+    width: 70px;
+    z-index: 10;
+    /* left: 125px; */
+}
+
+.koopa_shell_animation{
+    animation: koopa_shell_animation 2s infinite linear;
+}
+
+@keyframes koopa_shell_animation{
+    from{
+        right: -70px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+/* Grama */
+
+.grass{
+    position: absolute;
+    bottom: 28px;
+    z-index: 0;
+    width: 150px;
+}
+
+.grass-animation{
+    animation: grass-animation 5s infinite linear;
+}
+
+@keyframes grass-animation{
+    from{
+        right: -80px
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+/* Chão */
+
+.floor{
+    width: 1500px;
+    height: 34px;
+    position: absolute;
+    bottom: 0;
+}
+
+.floor-1{
+    position: absolute;
+    z-index: 0;
+    animation: floor-animation-1 3.1s infinite linear;
+}
+
+@keyframes floor-animation-1{
+    from{
+        right: 0px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+ 
+.floor-2{
+    right: -1500px;
+    position: absolute;
+    z-index: 5;
+    animation: floor-animation-2 6.2s infinite linear;
+}
+
+@keyframes floor-animation-2{
+    from{
+        right: -1500px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
+
+.floor-3{
+    right: -1500px;
+    position: absolute;
+    z-index: 10;
+    animation: floor-animation-3 6.2s infinite linear;
+}
+
+@keyframes floor-animation-3{
+    from{
+        right: -1500px;
     }
 
     to{
