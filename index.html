@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,37 @@
     <link rel="stylesheet" href="./css/style.css">
     <title>It's a me, Mario!</title>
 </head>
+
 <body>
 
     <div class="game-board">
 
-        <p id="text-start">Pressione qualquer tecla para iniciar o jogo!</p>
+        <div class="game-infomation">
+            
+            <div class="start-game">
+                <button id="start" onclick="startGame()">Iniciar</button>
+                <button id="reStart" onclick="window.location.reload()">Recomeçar</button>
+            </div>
+
+        </div>
 
         <img src="./img/clouds.png" class="clouds-1" alt="desenho de nuvens">
         <img src="./img/clouds.png" class="clouds-2" alt="desenho de nuvens">
         <img src="./img/clouds.png" class="clouds-3" alt="desenho de nuvens">
-        
+
+        <p id="text-start">Clique em Iniciar e pressione qualquer tecla para pular!</p>
+
         <img src="./img/mario-start.png" class="mario" alt="desenho do Mário">
         <img src="./img/pipe.png" class="pipe" alt="desenho de um cano verde">
         <img src="./img/koopa_shell.png" class="koopa_shell" alt="desenho do koopa_shell">
         <img src="./img/grass.png" class="grass" alt="desenho de graminha">
 
-        <div class="floor">
-            <img src="./img/floor.png" class="floor-1" alt="desenho do chão">
-            <!-- <img src="./img/floor.png" class="floor-2" alt="desenho do chão">
-            <img src="./img/floor.png" class="floor-3" alt="desenho do chão"> -->
-        </div>
+        <img src="./img/floor.png" class="floor alt="desenho do chão">
 
     </div>
-    
+
 
     <script src="./js/script.js" defer></script>
 </body>
+
 </html>

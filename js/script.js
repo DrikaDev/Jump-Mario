@@ -3,18 +3,16 @@ const koopaShell = document.querySelector('.koopa_shell');
 const pipe = document.querySelector('.pipe');
 const grass = document.querySelector('.grass');
 
+let startButton = document.getElementById('start');
+
 const textStart = document.querySelector('text-start');
 const audioStart = new Audio('./audio/audio_theme.mp3');
 const audioGameOver = new Audio('./audio/audio_gameover.mp3');
 
-const floor1 = document.querySelector('.floor-1')
-const floor2 = document.querySelector('.floor-2')
-const floor3 = document.querySelector('.floor-3')
+// Função iniciar jogo:
+function startGame () {
 
-// Função iniciar jogo
-const start = () => {
-
-    document.getElementById('text-start').style.color = '#87CEEB';
+    document.getElementById('text-start').style.visibility = "hidden";
 
     mario.src = './img/mario.gif';
     mario.style.width = '150px';
@@ -24,28 +22,12 @@ const start = () => {
     pipe.classList.add('pipe-animation');
     grass.classList.add('grass-animation');
 
-    // function floorAnimation1() {
-    //     floor1.classList.add('.floor-animation-1');
-    // }
-    // setInterval(floorAnimation1, 1000);
-
-    // function floorAnimation2() {
-    //     floor2.classList.add('.floor-animation-2');
-    // }
-    // setInterval(floorAnimation2, 3000);
-
-    // function floorAnimation3() {
-    //     floor3.classList.add('.floor-animation-3');
-    // }
-    // setInterval(floorAnimation3, 5000);
-
     audioStart.play();
 }
-document.addEventListener('keydown', start);
+document.addEventListener('onkeydown', startGame);
 
-
-// Função para o Mario pular
-const jump = () => {
+// Função para o Mario pular:
+function jump (){
     mario.classList.add('jump');
 
     //a gente remove a class .jump com o setTimeout para que o Mario consiga pular novamente, senão ele pula apenas 1x
@@ -65,9 +47,6 @@ const checkGameOver = setInterval(() => {
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
     const pipePosition = pipe.offsetLeft;
     const grassPosition = grass.offsetLeft;
-    // const floorPosition1 = floor1.offsetLeft;
-    // const floorPosition2 = floor2.offsetLeft;
-    // const floorPosition3 = floor3.offsetLeft;
 
     if (koopaShellPosition <= 125 && koopaShellPosition > 0 && marioPosition < 80) {
         koopaShell.style.animation = 'none';
@@ -87,16 +66,7 @@ const checkGameOver = setInterval(() => {
         grass.style.animation = 'none';
         grass.style.left = `${grassPosition}px`;
 
-        // floor1.style.animation = 'none';
-        // floor1.style.left = `${floorPosition1}px`;
-
-        // floor2.style.animation = 'none';
-        // floor2.style.left = `${floorPosition2}px`;
-
-        // floor3.style.animation = 'none';
-        // floor3.style.left = `${floorPosition3}px`;
-
-        document.getElementById('text-start').style.color = 'black';
+        document.getElementById('text-start').style.visibility = '';
         document.getElementById('text-start').innerHTML = 'Game Over';
 
         function stopAudioStart() {
@@ -108,3 +78,4 @@ const checkGameOver = setInterval(() => {
         clearInterval(checkGameOver);
     }
 }, 10)
+

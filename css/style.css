@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Roboto Mono', monospace;
 }
 
 .game-board{
@@ -14,12 +15,35 @@
     overflow: hidden;
 }
 
+.game-infomation{
+    width: 100%;
+    position: absolute;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+}
+
 p{
     width: 100%;
     text-align: center;
-    font-size: 1.5rem;
-    font-family:'Roboto Mono', monospace;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+    font-weight: bolder;
+    position: absolute;
+    top: 15rem;
+    z-index: 20;
+}
+
+.start-game{
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.start-game button{
+    width: 5rem;
+    height: 2rem;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 /* Nuvens */
@@ -165,62 +189,3 @@ p{
     position: absolute;
     bottom: 0;
 }
-
-.floor-1{
-    position: absolute;
-    z-index: 0;
-}
-
-.floor-animation-1{
-    animation: floor-animation-1 3.1s infinite linear;
-}
-
-@keyframes floor-animation-1{
-    from{
-        right: 0px;
-    }
-
-    to{
-        right: 100%;
-    }
-}
- 
-/* .floor-2{
-    right: -1500px;
-    position: absolute;
-    z-index: 5;
-}
-
-.floor-animation-2{
-    animation: floor-animation-2 6.2s infinite linear;
-}
-
-@keyframes floor-animation-2{
-    from{
-        right: -1500px;
-    }
-
-    to{
-        right: 100%;
-    }
-}
-
-.floor-3{
-    right: -1500px;
-    position: absolute;
-    z-index: 10;
-}
-
-.floor-animation-3{
-    animation: floor-animation-3 6.2s infinite linear;
-}
-
-@keyframes floor-animation-3{
-    from{
-        right: -1500px;
-    }
-
-    to{
-        right: 100%;
-    }
-} */
