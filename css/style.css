@@ -23,6 +23,10 @@
     flex-direction: column;
 }
 
+.start-game h3{
+    display: none;
+}
+
 p{
     width: 100%;
     text-align: center;

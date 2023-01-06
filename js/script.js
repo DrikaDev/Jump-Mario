@@ -4,6 +4,8 @@ const pipe = document.querySelector('.pipe');
 const grass = document.querySelector('.grass');
 
 let startButton = document.getElementById('start');
+let number = document.getElementById('number');
+let counter = 0;
 
 const textStart = document.querySelector('text-start');
 const audioStart = new Audio('./audio/audio_theme.mp3');
@@ -24,7 +26,7 @@ function startGame () {
 
     audioStart.play();
 }
-document.addEventListener('onkeydown', startGame);
+document.addEventListener('onkeypress', startGame);
 
 // Função para o Mario pular:
 function jump (){
@@ -35,9 +37,11 @@ function jump (){
         //setTimeout é uma função que recebe 2 parâmetros: função que faz algo + o tempo de duração
         mario.classList.remove('jump')
     }, 500);
+    
+    counter++
+    number.textContent = counter
 }
 document.addEventListener('keydown', jump);
-
 
 // Função para checar se a gente perdeu ou não o jogo
 const checkGameOver = setInterval(() => {
@@ -67,7 +71,20 @@ const checkGameOver = setInterval(() => {
         grass.style.left = `${grassPosition}px`;
 
         document.getElementById('text-start').style.visibility = '';
-        document.getElementById('text-start').innerHTML = 'Game Over';
+
+        if(counter == 1){
+            document.getElementById('text-start').innerHTML = 
+            `Parabéns! Você conseguiu pular ${counter} casco.`;
+        }else if(counter > 1 && counter < 9){
+            document.getElementById('text-start').innerHTML = 
+            `Parabéns! Você conseguiu pular ${counter} cascos.`;
+        }else if(counter > 10){
+            document.getElementById('text-start').innerHTML = 
+            `Uau! Você está ficando profissa! Pulou ${counter} cascos!`;
+        }else{
+            document.getElementById('text-start').innerHTML = 
+            `Que pena, você não conseguiu pular nenhum casco.`;
+        }
 
         function stopAudioStart() {
             audioStart.pause();
