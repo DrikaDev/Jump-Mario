@@ -1,5 +1,4 @@
 # Jump-Mario 
-(Projeto em fase de aprendizado e aperfeiçoamento)\
 Jogo simples do Mario usando apenas HTML, CSS e JavaScript onde é possível fazer com que o personagem pule obstáculos pressionando qualquer tecla do teclado e termina quando o ele colide com algum obstáculo.
 
 <h2> Linguagens utilizadas: </h2>
