@@ -16,4 +16,4 @@ Jogo simples do Mario usando apenas HTML, CSS e JavaScript onde é possível faz
 </tr>
 </table>
 
-https://user-images.githubusercontent.com/102387476/210290083-e9fd1d5b-1504-4fa8-9993-b28865601658.mp4
+https://user-images.githubusercontent.com/102387476/211660816-d5bfef83-80fa-49f2-b0ed-3141826cc9ad.mp4
