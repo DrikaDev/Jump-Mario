@@ -1,5 +1,6 @@
 # Jump-Mario 
-Jogo simples do Mario usando apenas HTML, CSS e JavaScript onde é possível fazer com que o personagem pule obstáculos pressionando qualquer tecla do teclado e termina quando o ele colide com algum obstáculo.
+Jogo simples usando html, css e javascript onde Mário tem que pular o casco de tartaruga.\
+Termina quando ele colide com algum casco e daí o programa mostra quantos cascos o usuário conseguiu pular.
 
 <h2> Linguagens utilizadas: </h2>
 
